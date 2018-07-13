@@ -14,3 +14,12 @@ extension Category: PostgreSQLModel {}
 extension Category: Content {}
 extension Category: Migration {}
 extension Category: Parameter {}
+
+extension Category {
+    // 1
+    var acronyms: Siblings<Category, Acronym, AcronymCategoryPivot> {
+        // 2
+        return siblings()
+    }
+}
+
