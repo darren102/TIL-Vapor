@@ -174,21 +174,19 @@
         method: .POST,
         loggedInRequest: true)
 
-    let request3URL = "\(acronymsURI)\(acronym.id!)/categories/\(category.id!)"
-    _ = try app.sendRequest(
-        to: request3URL,
-        method: .DELETE,
-        loggedInRequest: true)
-
      let categories = try app.getResponse(to: "\(acronymsURI)\(acronym.id!)/categories", decodeTo: [App.Category].self)
 
-     XCTAssertEqual(categories.count, 1)
+     XCTAssertEqual(categories.count, 2)
      XCTAssertEqual(categories[0].id, category.id)
      XCTAssertEqual(categories[0].name, category.name)
      XCTAssertEqual(categories[1].id, category2.id)
      XCTAssertEqual(categories[1].name, category2.name)
 
-     _ = try app.sendRequest(to: "\(acronymsURI)\(acronym.id!)/categories/\(category.id!)", method: .DELETE)
+    let request3URL = "\(acronymsURI)\(acronym.id!)/categories/\(category.id!)"
+    _ = try app.sendRequest(
+        to: request3URL,
+        method: .DELETE,
+        loggedInRequest: true)
      let newCategories = try app.getResponse(to: "\(acronymsURI)\(acronym.id!)/categories", decodeTo: [App.Category].self)
 
      XCTAssertEqual(newCategories.count, 1)
