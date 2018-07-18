@@ -74,6 +74,24 @@
         }
       },
       {
+        "package": "Imperial",
+        "repositoryURL": "https://github.com/vapor-community/Imperial.git",
+        "state": {
+          "branch": null,
+          "revision": "a567ebccbe7560dac89962d0b76076a3f991dbbe",
+          "version": "0.7.1"
+        }
+      },
+      {
+        "package": "JWT",
+        "repositoryURL": "https://github.com/vapor/jwt.git",
+        "state": {
+          "branch": null,
+          "revision": "de0dc5bbba60250c24c5c4b4d2505d7a71dd03ae",
+          "version": "3.0.0-rc.2.1.2"
+        }
+      },
+      {
         "package": "Leaf",
         "repositoryURL": "https://github.com/vapor/leaf.git",
         "state": {
