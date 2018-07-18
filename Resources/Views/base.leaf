@@ -16,6 +16,7 @@
         }
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/styles/style.css">
         <title>#(title) | Acronyms</title>
     </head>
     <body>
@@ -45,11 +46,31 @@
                         </a>
                     </li>
                 </ul>
+                #if(userLoggedIn) {
+                <form class="form-inline" action="/logout" method="POST">
+                    <input class="nav-link btn btn-link" type="submit" value="Log out">
+                </form>
+                }
             </div>
         </nav>
         <div class="container mt-3">
             #get(content)
         </div>
+
+#if(showCookieMessage) {
+#// 2
+<footer id="cookie-footer">
+<div id="cookieMessage" class="container">
+<span class="muted">
+#// 3
+This site uses cookies! To accept this, click
+<a href="#" onclick="cookiesConfirmed()">OK</a>
+</span>
+</div>
+</footer>
+#// 4
+<script src="/scripts/cookies.js"></script>
+}
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 #// 2
